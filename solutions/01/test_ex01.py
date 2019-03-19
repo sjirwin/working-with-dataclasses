@@ -2,34 +2,45 @@ import unittest
 
 import ex01
 
-class TestEx01Methods(unittest.TestCase):
-    
+class TestEx01NoDefault(unittest.TestCase):
+
     # TODO: replace ValueError with the correct Exception type
-    def test_no_default_empty_init(self):
+    def test_empty_init(self):
         with self.assertRaises(TypeError):
             ex01.NoDefault()
 
     # TODO: invoke NoDefault() with fld_1 set to expected value
-    def test_no_default_init_fld_1(self):
+    def test_init_fld_1(self):
         self.assertEqual(ex01.NoDefault(fld_1=42).fld_1, 42)
 
-    def test_with_default_init_fld_1(self):
+class TestEx01WithDefault(unittest.TestCase):
+
+    def test_init_fld_1(self):
         self.assertEqual(ex01.WithDefault().fld_1, 42)
 
-    def test_with_default_init_fld_2(self):
+    def test_init_fld_2(self):
         self.assertEqual(ex01.WithDefault().fld_2, 'hello')
 
     # TODO: invoke WithDefault() with fld_1 set to expected value
-    def test_with_default_assign_fld_1(self):
+    def test_assign_fld_1(self):
         self.assertEqual(ex01.WithDefault(fld_1=-28).fld_1, -28)
 
     # TODO: invoke WithDefault() with fld_2 set to expected value
-    def test_with_default_assign_fld_2(self):
+    def test_assign_fld_2(self):
         self.assertEqual(ex01.WithDefault(fld_2='world').fld_2, 'world')
 
-    def test_with_method(self):
-        self.assertAlmostEqual(ex01.WithMethod().fld_sum(), 2.12132034)
+    # TODO: correct the field values in the assert's expected value (second WithDefault())
+    def test_eq(self):
+        self.assertEqual(ex01.WithDefault(), ex01.WithDefault(fld_1=42,fld_2='hello'))
 
+    # TODO: correct the expected string in the assertEqual()
+    def test_repr(self):
+        self.assertEqual(str(ex01.WithDefault()), "WithDefault(fld_1=42, fld_2='hello')")
+
+class TestEx01WithMethod(unittest.TestCase):
+
+    def test_fld_sum(self):
+        self.assertAlmostEqual(ex01.WithMethod().fld_sum(), 2.12132034)
 
 if __name__ == '__main__':
     unittest.main()
