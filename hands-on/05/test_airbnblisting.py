@@ -52,11 +52,11 @@ class TestAirbnbListing(unittest.TestCase):
         self.assertEqual(TestAirbnbListing.listings[200].lat_long, (40.8064, -73.92395))
 
     def test_long_stay(self):
-        long_stay = month_stay_min = [l for l in TestAirbnbListing.listings if l.requires_long_stay()]
+        long_stay = [l for l in TestAirbnbListing.listings if l.requires_long_stay()]
         self.assertEqual(len(long_stay), 4903)
 
-    def test_is_manhattan(self):
-        manhattan_long_stay = month_stay_min = [l for l in TestAirbnbListing.listings if l.requires_long_stay() and l.is_manhattan()]
+    def test_is_manhattan_long_stay(self):
+        manhattan_long_stay = [l for l in TestAirbnbListing.listings if l.requires_long_stay() and l.is_manhattan()]
         self.assertEqual(len(manhattan_long_stay), 3239)
 
     def test_minimum_cost(self):

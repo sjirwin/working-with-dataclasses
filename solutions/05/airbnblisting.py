@@ -5,9 +5,9 @@ from datetime import date
 # TODO: add the fields for an Airbnb listing. 
 #       the field lat_long should be a tuple of two floats
 #       the following fields should be included in repr:
-#           id, host_id, neighbourhood_group, neighbourhood, neighbourhood, room_type, price, lat_long
+#           id, host_id, neighbourhood_group, neighbourhood, minimum_nights, room_type, price, lat_long
 #       the following fields should be included in compare:
-#           neighbourhood_group, neighbourhood, neighbourhood, room_type, price
+#           neighbourhood_group, neighbourhood, minimum_nights, room_type, price
 @dataclass
 class AirbnbListing:
     id: int = field(compare=False)
@@ -30,7 +30,7 @@ class AirbnbListing:
     def is_manhattan(self):
         return self.neighbourhood_group == 'Manhattan'
 
-    # TODO: implement requires_long_stay()
+    # TODO: implement requires_long_stay(). A long stay is defined as minimum_nights >= 30
     def requires_long_stay(self):
         return self.minimum_nights >= 30
 
