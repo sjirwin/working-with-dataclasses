@@ -4,7 +4,7 @@ Classes have been available in Python since the beginning, but writing a fully f
 
 In Python 3.7 the dataclasses module was introduced to the standard library (also available as a pip installable module for Python 3.6). This module makes it easier for developers to create user-defined classes, particularly custom data containers, by reducing the amount of code that they need to write, test, and maintain.
 
-The code in this repo is the Hands-on exercises which are part of an web-based training course offered through the [Safari Live Online Training platform](https://www.oreilly.com/online-learning/try-now.html). The course helps you explore and understand the features of the dataclasses module so that you can effectively use it to write better, more maintainable Python classes.
+The code in this repo is the [Hands-on exercises](hands-on) which are part of an web-based training course offered through the [Safari Live Online Training platform](https://www.oreilly.com/online-learning/try-now.html). The course helps you explore and understand the features of the dataclasses module so that you can effectively use it to write better, more maintainable Python classes.
 
 ## What you will learn-and how you can apply it
 You will understand
