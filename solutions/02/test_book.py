@@ -17,8 +17,8 @@ class TestBookMethods(unittest.TestCase):
         self.assertLess(book, Book('2010: Odyssey Two', 'Clarke, Arthur C.'))
 
     def test_greater_than(self):
-        book = Book(title='Great Expectations', author='Acker, Kathy')
-        self.assertLess(book, Book('Great Expectations', 'Dickens, Charles'))
+        book = Book(title='Great Expectations', author='Dickens, Charles')
+        self.assertGreater(book, Book('Great Expectations', 'Acker, Kathy'))
 
 if __name__ == '__main__':
     unittest.main()
