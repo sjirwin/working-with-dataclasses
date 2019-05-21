@@ -32,7 +32,7 @@ class TestAirbnbListing(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         filename = 'Airbnb Summary Listings NYC 2019-03-06.csv'
-        with open(filename, newline='') as csvfile:
+        with open(filename, encoding='utf-8', newline='') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 listing = TestAirbnbListing.row_to_listing(row)
