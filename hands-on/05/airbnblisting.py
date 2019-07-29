@@ -11,7 +11,8 @@ from datetime import date
 @dataclass
 class AirbnbListing:
 
-    # TODO: implement is_manhattan()
+    # TODO: use neighbourhood_group to implement is_manhattan()
+    #       values for neighbourhood_group are Bronx, Brooklyn, Manhattan, Queens, Staten Island
     def is_manhattan(self):
         pass
 
